@@ -1,0 +1,45 @@
+{% extends 'QR admin temp/layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        {% include 'QR admin temp/layouts/header.html' %}
+        {% include 'QR admin temp/layouts/sidebar.html' %}
+        <div class="page-wrapper">
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Yangilash</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="white-box">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mahsulot Nomi</label>
+                                    <input name="name" type="text" class="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp" placeholder="Mahsulot Nomi">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Ma'lumot</label>
+                                    <input name="description" type="text" class="form-control"
+                                           id="exampleInputPassword1"
+                                           placeholder="Mahsulot haqida qisqacha ma'lumot">
+                                </div>
+                                {#                                <div class="form-group">#}
+                                {#                                    <label for="exampleFormControlFile1">Mahsulot Rasmi</label>#}
+                                {#                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">#}
+                                {#                                </div>#}
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

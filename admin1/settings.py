@@ -1,5 +1,5 @@
 from pathlib import Path
-from urllib.request import localhost
+# from urllib.request import localhost
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -19,7 +19,9 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 
-	'products'
+	'ckeditor',
+
+	'products',
 ]
 
 MIDDLEWARE = [
@@ -53,23 +55,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'admin1.wsgi.application'
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': 'admin1.db',
-		'USER': 'admin_user',
-		'PASSWORD': 'admin_pass',
-		'HOST': 'localhost',
-		'PORT': 5432,
-	}
-}
-
 # DATABASES = {
 # 	'default': {
-# 		'ENGINE': 'django.db.backends.sqlite3',
-# 		'NAME': BASE_DIR / 'db.sqlite3',
+# 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+# 		'NAME': 'admin1.db',
+# 		'USER': 'admin_user',
+# 		'PASSWORD': 'admin_pass',
+# 		'HOST': 'localhost',
+# 		'PORT': 5432,
 # 	}
 # }
+#
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': BASE_DIR / 'db.sqlite3',
+	}
+}
 
 AUTH_PASSWORD_VALIDATORS = [
 	{
@@ -103,4 +105,11 @@ STATICFILES_DIRS = BASE_DIR / 'assets',
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+	'default': {
+		'toolbar': 'full',
+	},
+}
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
